@@ -1,0 +1,53 @@
+body{
+    margin: 0px;
+    background-color: rgb(248, 248, 248);
+}
+#header{
+    background-color: #ffb902;
+    height: 4.7rem;
+    color: rgb(248, 248, 248);
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+#create{
+    margin: auto;
+    width: 25rem;
+}
+
+.input{
+    border: none;
+}
+
+.input:focus{
+    outline: none;
+}
+
+.title{
+    font-weight: 500;
+    font-size: 1.2rem;
+    resize: none;
+}
+
+.title::placeholder{
+    font-weight: 500;
+}
+
+.text::placeholder{
+    font-family: cursive;
+    color: rgb(163, 163, 163);
+}
+
+.text{
+    resize: none;
+}
+
+.add-note{
+    position: relative;
+    left: 16.5rem;
+    background-color: #ffb902;
+    color: white;
+}
+
+.btn:hover{
+    color: white;
+}
