@@ -49,6 +49,18 @@ body{
     color: white;
 }
 
-.btn:hover{
+.add-note:hover{
     color: white;
+}
+
+.delete{
+    color: #ffb902;
+    width: 10%;
+    margin-left: auto;
+    background: transparent;
+    border: 0px;
+}
+
+.delete:hover{
+    color: #d69b05;
 }
