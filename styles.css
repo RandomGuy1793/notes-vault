@@ -35,7 +35,7 @@ body{
 }
 
 .text::placeholder{
-    font-family: cursive;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: rgb(163, 163, 163);
 }
 
