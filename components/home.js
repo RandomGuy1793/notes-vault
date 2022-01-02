@@ -2,7 +2,7 @@ const token=sessionStorage.getItem("jwt");
 // console.log(token);
 const isSkipped=sessionStorage.getItem('skipped')
 
-const makeNote=(title, text)=>{
+const makeNote=(title, text, _id=null)=>{
     const div1=document.createElement('div');
     div1.classList.add('col-lg-2', 'p-4')
 
@@ -17,13 +17,17 @@ const makeNote=(title, text)=>{
 
     const button=document.createElement('button');
     button.classList.add('delete');
-    button.addEventListener('click', e=> e.target.parentNode.parentNode.parentNode.remove());
+    button.addEventListener('click', deleteNote);
+
+    const objIdEle=document.createElement('div');
+    objIdEle.style.display="none"
+    objIdEle.innerHTML=_id
 
     const i=document.createElement('i');
     i.classList.add('fas', 'fa-trash')
 
     button.appendChild(i);
-    div2.append(h5, para, button);
+    div2.append(h5, para, button, objIdEle);
     div1.appendChild(div2);
 
     let prev = document.querySelector("#store .row");
@@ -57,7 +61,7 @@ const getNotes=async()=>{
         const data=await res.json()
         console.log(data);
         data.forEach((obj)=>{
-            makeNote(obj.title, obj.text)
+            makeNote(obj.title, obj.text, obj._id)
         })
     }
     
@@ -79,7 +83,35 @@ const postNote=async(noteTitle, noteText)=>{
         },
         body: JsonData
     })
-    if(res.status===200) makeNote(noteTitle, noteText);
+    if(res.status===200){
+        const data=await res.json();
+        console.log(data);
+        const {title, text, _id}=data;
+        makeNote(title, text, _id)
+    }
+}
+
+const deleteNote=async(e)=>{
+    const ele=e.target;
+    
+    // console.log(ele);
+    if(!isSkipped){
+        const objId=ele.parentNode.parentNode.lastChild.innerText;
+        console.log(objId);
+        const res=await fetch(`http://localhost:4000/api/notes/delete/${objId}`, {
+            // mode: "no-cors",
+            method: "DELETE",
+            headers:{
+                "Content-Type": "application/json",
+                "x-auth-token": token
+            }
+        })
+        if(res.status!==200){
+            return
+        }
+        // e.target.parentNode.parentNode.parentNode.remove()
+    }
+    ele.parentNode.parentNode.parentNode.remove()
 }
 
 const logOut=document.querySelector('.log-out');
