@@ -30,10 +30,12 @@ const registerButton = document.querySelector('.register-button')
 const loginButton = document.querySelector('.login-button')
 registerButton.addEventListener('click', handleRegister);
 loginButton.addEventListener('click', handleLogin);
-const skipButton = document.querySelector('.skip');
-skipButton.addEventListener('click', () => {
-    sessionStorage.setItem('skipped', true);
-    window.location.replace("/components/static/home.html")
+const skipButtons = document.querySelectorAll('.skip');
+skipButtons.forEach((b)=>{
+    b.addEventListener('click', ()=>{
+        sessionStorage.setItem('skipped', true);
+        window.location.replace("/components/static/home.html")
+    })
 })
 
 
