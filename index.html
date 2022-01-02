@@ -1,44 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Vault</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div id="header" class="shadow-sm">
-        <h1 class="m-0 px-5 py-3">My Vault</h1>
-    </div>
-    <div id="create" class="my-5">
-        <div class="card shadow-4">
-            <div class="card-body">
-                <textarea class="input title" placeholder="Title" rows="1"></textarea>
-                <textarea class="input text my-2" rows="10" placeholder="Start adding notes..."></textarea>
-
-                <button class="add-note shadow-sm btn grow">Add Note</button>
-            </div>
+    <h1 class="heading">My Vault</h1>
+    <div class="login-page">
+        <div class="form">
+            <form class="register-form">
+                <input name="name" type="text" placeholder="name" />
+                <input name="password" type="password" placeholder="password" />
+                <input name="email" type="text" placeholder="email address" />
+                <button class="register-button">Register</button>
+                <p class="message">Already registered? <a class="toggle" href="javaScript:void(0);">Sign In</a></p>
+            </form>
+            <form class="login-form">
+                <input name="email" type="text" placeholder="email address" />
+                <input name="password" type="password" placeholder="password" />
+                <button class="login-button">Login</button>
+                <p class="message">Not registered? <a class="toggle" href="javaScript:void(0);">Create an account</a></p>
+            </form>
+            <h5 class="message">Continue without sign up? <a class="skip">Skip sign up</a></h5>
         </div>
     </div>
-    <div id="store" class="mx-3">
-        <div class="row">
-
-        </div>
-    </div>
-    <script src="https://kit.fontawesome.com/3fa9924593.js" crossorigin="anonymous"></script>
-    <script type="module" src="script.js" async defer></script>
+    <script>
+        sessionStorage.removeItem('jwt');
+        sessionStorage.removeItem('skipped');
+    </script>
+    <script type="module" src="script.js"></script>
 </body>
+
 </html>

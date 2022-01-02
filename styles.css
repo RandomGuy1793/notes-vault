@@ -1,81 +1,71 @@
-body{
-    margin: 0px;
-    background-color: rgb(248, 248, 248);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
 }
-#header{
-    background-color: #f7b500;
-
-    height: 4.7rem;
-    color: white;
-    font-family: 'Permanent Marker', cursive;
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
-
-#create{
-    margin: auto;
-    width: 25rem;
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
 }
-
-.input{
-    border: none;
-    width: 100%;
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #f7b500;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
 }
-
-.input:focus{
-    outline: none;
+.form button:hover,.form button:active,.form button:focus {
+  background: #f7b500;
 }
-
-.title{
-    font-weight: 500;
-    font-size: 1.2rem;
-    resize: none;
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
 }
-
-.title::placeholder{
-    font-weight: 500;
+.form .message a {
+  color: #f7b500;
+  text-decoration: none;
 }
-
-.text::placeholder{
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: rgb(163, 163, 163);
-}
-
-.text{
-    resize: none;
-}
-
-.add-note{
-    position: relative;
-    left: 16.5rem;
-    background-color: #f7b500;
-    color: white;
-}
-
-.add-note:hover{
-    color: white;
-}
-
-/* .note{
-    font-family: cursive;
-} */
-
-.note p{
-    color: rgb(112, 111, 111);
+.form .login-form {
+  display: none;
 }
 
-.delete{
-    color: #f7b500;;
-    width: 10%;
-    margin-left: auto;
-    background: transparent;
-    border: 0px;
+.skip{
+  cursor: pointer;
 }
-
-.delete:hover{
-    color: #d69b05;
+body {
+  /* background-color: #ffe695; */
+  background: linear-gradient(to bottom right, #ffbb00, #ffffff) fixed;
+  font-family: "Roboto", sans-serif;   
 }
-
-@media (max-width: 1000px){
-    .note{
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
+.heading{
+  color: white;
+  font-family: 'Permanent Marker', cursive;
+  margin: 1.3rem 2.5rem;
 }
