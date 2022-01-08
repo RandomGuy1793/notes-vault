@@ -16,7 +16,6 @@ const addNote = () => {
 
 const getNotes = async () => {
     const res = await fetch('https://notes-vault.herokuapp.com/api/notes', {
-        // mode: "no-cors",
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -25,7 +24,6 @@ const getNotes = async () => {
     })
     if (res.status === 200) {
         const data = await res.json()
-        console.log(data);
         data.forEach((obj) => {
             makeNote(obj.title, obj.text, obj._id)
         })
@@ -38,9 +36,7 @@ const postNote = async (noteTitle, noteText) => {
         text: noteText
     }
     const JsonData = JSON.stringify(obj);
-    console.log(JsonData);
     const res = await fetch('https://notes-vault.herokuapp.com/api/notes/add', {
-        // mode: "no-cors",
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -50,7 +46,6 @@ const postNote = async (noteTitle, noteText) => {
     })
     if (res.status === 200) {
         const data = await res.json();
-        console.log(data);
         const { title, text, _id } = data;
         makeNote(title, text, _id)
     }
@@ -60,9 +55,7 @@ const deleteNote = async (e) => {
     const parentOfObjIdDiv = e.target.parentNode.parentNode.parentNode.parentNode
     if (!isSkipped) {
         const objId = parentOfObjIdDiv.lastChild.innerText;
-        console.log(objId);
         const res = await fetch(`https://notes-vault.herokuapp.com/api/notes/delete/${objId}`, {
-            // mode: "no-cors",
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
@@ -72,7 +65,6 @@ const deleteNote = async (e) => {
         if (res.status !== 200) {
             return
         }
-        // e.target.parentNode.parentNode.parentNode.remove()
     }
     const ele2Remove = parentOfObjIdDiv.parentNode;
     ele2Remove.remove()
@@ -89,11 +81,8 @@ const editNote = async (e) => {
         }
         const parentOfObjIdDiv = titleEle.parentNode
         const objId=parentOfObjIdDiv.lastChild.innerText
-        console.log(objId);
         const JsonData = JSON.stringify(obj);
-        console.log(JsonData);
         const res = await fetch(`https://notes-vault.herokuapp.com/api/notes/edit/${objId}`, {
-            // mode: "no-cors",
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -111,8 +100,6 @@ const editNote = async (e) => {
     titleEle.style.backgroundColor='white'
     textEle.style.backgroundColor='white'
 }
-
-
 
 let addButton = document.querySelector('.add-note');
 addButton.addEventListener('click', addNote);

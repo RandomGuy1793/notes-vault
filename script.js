@@ -19,13 +19,6 @@ button.forEach((ele) => {
     ele.addEventListener('click', toggleSignIn)
 })
 
-// try {
-
-// }
-// catch {
-//     console.log("dont worry");
-// }
-
 const registerButton = document.querySelector('.register-button')
 const loginButton = document.querySelector('.login-button')
 registerButton.addEventListener('click', handleRegister);

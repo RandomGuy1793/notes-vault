@@ -1,14 +1,10 @@
-
-
 const handleLogin=async(e)=>{
     e.preventDefault();
     const loginForm=document.querySelector('.login-form')
     const formData=new FormData(loginForm);
     const plainData=Object.fromEntries(formData.entries());
     const JsonData=JSON.stringify(plainData);
-    console.log(JsonData);
     const res=await fetch('https://notes-vault.herokuapp.com/api/login', {
-        // mode: "no-cors",
         method: "POST",
         headers:{
             "Content-Type": "application/json",
@@ -17,11 +13,7 @@ const handleLogin=async(e)=>{
     })
 
     if(res.ok){
-        /*
-            ....
-        */
-            const token = res.headers.get('x-auth-token');
-            console.log(token);
+        const token = res.headers.get('x-auth-token');
         sessionStorage.setItem("jwt", token)
         window.location.replace("/components/static/home.html")
 

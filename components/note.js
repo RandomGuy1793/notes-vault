@@ -11,16 +11,13 @@ const getTitleAndText=(e)=>{
     const parent=e.target.parentNode.parentNode.parentNode.parentNode
     const titleEle=parent.children[0];
     const textEle=parent.children[1];
-    console.log(titleEle);
     return [titleEle, textEle]
 }
 
 const handleEditButton=(e)=>{
     const [titleEle, textEle]=getTitleAndText(e);
     const title=titleEle.innerText
-    // console.log(title);
     const text=textEle.innerText
-    // console.log(text);
     titleBuffer=title
     textBuffer=text
     titleEle.contentEditable=true;
