@@ -7,7 +7,7 @@ const handleLogin=async(e)=>{
     const plainData=Object.fromEntries(formData.entries());
     const JsonData=JSON.stringify(plainData);
     console.log(JsonData);
-    const res=await fetch('http://localhost:4000/api/login', {
+    const res=await fetch('https://notes-vault.herokuapp.com/api/login', {
         // mode: "no-cors",
         method: "POST",
         headers:{

@@ -15,7 +15,7 @@ const addNote = () => {
 }
 
 const getNotes = async () => {
-    const res = await fetch('http://localhost:4000/api/notes', {
+    const res = await fetch('https://notes-vault.herokuapp.com/api/notes', {
         // mode: "no-cors",
         method: "GET",
         headers: {
@@ -39,7 +39,7 @@ const postNote = async (noteTitle, noteText) => {
     }
     const JsonData = JSON.stringify(obj);
     console.log(JsonData);
-    const res = await fetch('http://localhost:4000/api/notes/add', {
+    const res = await fetch('https://notes-vault.herokuapp.com/api/notes/add', {
         // mode: "no-cors",
         method: "POST",
         headers: {
@@ -61,7 +61,7 @@ const deleteNote = async (e) => {
     if (!isSkipped) {
         const objId = parentOfObjIdDiv.lastChild.innerText;
         console.log(objId);
-        const res = await fetch(`http://localhost:4000/api/notes/delete/${objId}`, {
+        const res = await fetch(`https://notes-vault.herokuapp.com/api/notes/delete/${objId}`, {
             // mode: "no-cors",
             method: "DELETE",
             headers: {
@@ -82,7 +82,7 @@ const editNote = async (e) => {
     const [titleEle, textEle]=getTitleAndText(e)
     const noteTitle=titleEle.innerText
     const noteText=textEle.innerText
-    if(!isSkipped && !(noteTitle===titleBuffer && noteText===textBuffer)){
+    if(!isSkipped){
         const obj = {
             title: noteTitle,
             text: noteText
@@ -92,7 +92,7 @@ const editNote = async (e) => {
         console.log(objId);
         const JsonData = JSON.stringify(obj);
         console.log(JsonData);
-        const res = await fetch(`http://localhost:4000/api/notes/edit/${objId}`, {
+        const res = await fetch(`https://notes-vault.herokuapp.com/api/notes/edit/${objId}`, {
             // mode: "no-cors",
             method: "PUT",
             headers: {

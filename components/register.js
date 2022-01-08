@@ -6,7 +6,7 @@ const handleRegister=async(e)=>{
     const plainData=Object.fromEntries(formData.entries());
     const JsonData=JSON.stringify(plainData);
     console.log(JsonData);
-    const res=await fetch('http://localhost:4000/api/register', {
+    const res=await fetch('https://notes-vault.herokuapp.com/api/register', {
         // mode: "no-cors",
         method: "POST",
         headers:{
