@@ -9,9 +9,8 @@ Back End->  NodeJS, Express, MongoDB\
 <br />
 Sample screenshots:-
 <br />
-Desktop-
-<p float="left">
-  <img src="ss/ss1.jpg" width="80%" />
+<p>Desktop-</p>
+<img src="ss/ss1.jpg" width="80%" />
   <br />
   <br />
   <img src="ss/ss2.jpg" width="80%" />
@@ -21,6 +20,7 @@ Desktop-
   <br />
   <br />
   <p>Mobile-</p>
+<p float="left">
   <img src="ss/ssm1.png" width="40%" />
   <img src="ss/ssm2.png" width="40%" />
 </p>
