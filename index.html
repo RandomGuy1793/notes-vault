@@ -1,48 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Vault</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-<body>
+  <body>
     <h1 class="heading">My Vault</h1>
     <div class="login-page">
-        <div class="form shadow-lg">
-            <form class="register-form">
-                <input name="name" type="text" placeholder="name" />
-                <input name="email" type="text" placeholder="email address" />
-                <input name="password" type="password" placeholder="password" />
-                <button class="register-button">Register</button>
-                <p class="message">Already registered? <a class="toggle" href="javaScript:void(0);">Sign In</a></p>
-                <h5 class="message">Continue without sign up? <a class="skip">Skip sign up</a></h5>
-            </form>
-            <form class="login-form">
-                <input name="email" type="text" placeholder="email address" />
-                <input name="password" type="password" placeholder="password" />
-                <button class="login-button">Login</button>
-                <p class="message">Not registered? <a class="toggle" href="javaScript:void(0);">Create an account</a>
-                </p>
-                <h5 class="message">Continue without sign in? <a class="skip">Skip sign in</a></h5>
-            </form>
-            <p class="message">Notes will not be persistent on skipping sign up/sign in</p>
-        </div>
+      <div class="form shadow-lg">
+        <form class="register-form">
+          <input name="name" type="text" placeholder="name" />
+          <input name="email" type="text" placeholder="email address" />
+          <input name="password" type="password" placeholder="password" />
+          <button class="register-button">Register</button>
+          <p class="message">
+            Already registered?
+            <a class="toggle" href="javaScript:void(0);">Sign In</a>
+          </p>
+          <h5 class="message">
+            Continue without sign up? <a class="skip">Skip sign up</a>
+          </h5>
+        </form>
+        <form class="login-form">
+          <input name="email" type="text" placeholder="email address" />
+          <input name="password" type="password" placeholder="password" />
+          <button class="login-button">Login</button>
+          <p class="message">
+            Not registered?
+            <a class="toggle" href="javaScript:void(0);">Create an account</a>
+          </p>
+          <h5 class="message">
+            Continue without sign in? <a class="skip">Skip sign in</a>
+          </h5>
+        </form>
+        <p class="message">
+          Notes will not be persistent on skipping sign up/sign in
+        </p>
+      </div>
     </div>
     <script>
-        sessionStorage.removeItem('jwt');
-        sessionStorage.removeItem('skipped');
+      sessionStorage.removeItem("jwt");
+      sessionStorage.removeItem("skipped");
     </script>
     <script type="module" src="script.js"></script>
-</body>
-
+  </body>
 </html>
